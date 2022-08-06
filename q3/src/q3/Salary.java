@@ -34,6 +34,16 @@ class Employee {
 		System.out.println("Gross Salary\t" + grossSalary + "  " + "Net Salary\t" + netSalary);
 
 	}
+	
+	
+	
+	
+	boolean check() {
+		if (basicSalary < 1)
+			return false;
+		else
+			return true;
+	}
 
 }
 
@@ -48,6 +58,15 @@ public class Salary {
 		basicSalary = scanner.nextFloat();
 
 		Employee employee = new Employee(basicSalary);
+		
+		
+		if (!employee.check()) {
+
+			System.out.println("Try again!enter basic salary greater than 1");
+			System.exit(0);
+			
+		}
+		
 
 		employee.calculate();
 		employee.show();
