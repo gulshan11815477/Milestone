@@ -15,8 +15,15 @@ class Employee {
 		this.basicSalary = basicSalary;
 	}
 
-	
-	
+	void calculate() {
+		hRA = (float) (basicSalary * 0.1);
+		dA = (float) (basicSalary * 0.1);
+		pF = (float) (basicSalary * 0.1);
+
+		netSalary = basicSalary + hRA + dA - pF;
+		grossSalary = basicSalary + hRA + dA + pF;
+
+	}
 
 	void show() {
 		System.out.println("Basic Salary\t" + basicSalary + "  " + "PF\t" + pF);
@@ -28,20 +35,12 @@ class Employee {
 
 	}
 
-	
-	
-	
 }
-
-
-
-
 
 public class Salary {
 
 	public static void main(String[] args) {
 
-		
 		float basicSalary;
 		System.out.println("Enter Basic Salary of the Employee\n");
 
@@ -50,7 +49,8 @@ public class Salary {
 
 		Employee employee = new Employee(basicSalary);
 
-   employee.show();
+		employee.calculate();
+		employee.show();
 
 	}
 
